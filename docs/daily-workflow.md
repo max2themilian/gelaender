@@ -104,7 +104,7 @@ Use the custom agents as a pipeline, not randomly.
 
 6. `Security Review Agent`
 
-- Use before merging larger backend or checkout changes.
+- Use before merging larger backend or deployment-facing changes.
 - Output must prioritize findings by severity.
 
 7. `QA Release Agent`
@@ -153,3 +153,34 @@ For Gelaender, default to this order for new backend work:
 3. Data Agent (if models/migrations touched)
 4. Security Review Agent
 5. QA Release Agent
+
+## 10. Local Google Calendar Test Flow
+
+Use this flow to verify shows sync from public ICS locally without Google Cloud billing.
+
+1. Ensure `.env` in workspace root contains:
+   - `GOOGLE_CALENDAR_ICS_URL=https://calendar.google.com/calendar/ical/<calendar-id>/public/basic.ics`
+2. Start backend from workspace root:
+
+```powershell
+Set-Location backend
+.\scripts\run-local-api.ps1
+```
+
+3. In a second terminal, run contract validation:
+
+```powershell
+Set-Location backend
+.\scripts\validate-tour-dates.ps1 -BaseUrl http://127.0.0.1:8000
+```
+
+4. Optional direct endpoint check:
+
+```powershell
+Invoke-RestMethod http://127.0.0.1:8000/api/tour-dates | ConvertTo-Json -Depth 4
+```
+
+5. Success criteria:
+   - Response is a non-empty array.
+   - Events contain `event_name`, `date`, `city`, `venue_name`, `ticket_url`.
+   - Ticket URL is taken from `tickets: <link>` in event description when present.

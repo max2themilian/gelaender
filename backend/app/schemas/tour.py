@@ -1,10 +1,12 @@
-from pydantic import BaseModel
+from datetime import date
+
+from pydantic import BaseModel, HttpUrl
 
 
 class TourDateOut(BaseModel):
 	id: int
 	event_name: str
-	date: str
+	date: date
 	city: str
 	venue_name: str
-	ticket_url: str
+	ticket_url: HttpUrl

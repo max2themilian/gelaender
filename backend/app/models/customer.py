@@ -1,1 +1,0 @@
-"""Customer model placeholder."""

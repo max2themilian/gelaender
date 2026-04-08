@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="css/responsive.css" />
   </head>
-  <body>
+  <body class="contact-page">
     <header class="site-header">
       <a class="brand" href="index.html"
         ><img
@@ -63,6 +63,7 @@
                 name="name"
                 type="text"
                 autocomplete="name"
+                maxlength="120"
                 required
               />
             </div>
@@ -73,19 +74,31 @@
                 name="email"
                 type="email"
                 autocomplete="email"
+                maxlength="160"
                 required
               />
             </div>
           </div>
           <div class="form-field">
             <label for="contact-subject">Subject</label>
-            <input id="contact-subject" name="subject" type="text" required />
+            <input
+              id="contact-subject"
+              name="subject"
+              type="text"
+              maxlength="160"
+              required
+            />
           </div>
           <div class="form-field">
             <label for="contact-message">Message</label>
-            <textarea id="contact-message" name="message" required></textarea>
+            <textarea
+              id="contact-message"
+              name="message"
+              maxlength="5000"
+              required
+            ></textarea>
           </div>
-          <p class="contact-note" style="font-size: 0.8rem">
+          <p class="contact-note contact-note-small">
             Clicking Send will open your default email app with the message
             pre-filled. No data is sent through this website.
           </p>

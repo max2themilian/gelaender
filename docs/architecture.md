@@ -10,7 +10,6 @@
 
 - App entry: `backend/app/main.py`
 - Health endpoint: `/health`
-- Products endpoint: `/api/products`
 - Tour endpoint: `/api/tour-dates`
 - Social links endpoint: `/api/social-links`
 
@@ -21,8 +20,8 @@
 - `models/` for SQLAlchemy ORM entities
 - `services/` reserved for business logic (next steps)
 
-## Next Day 2 Targets
+## Next Targets
 
-- Add order request/response schemas and order route skeleton
-- Move hardcoded sample data into service layer stubs
-- Create first autogenerate-ready migration from model metadata
+- Keep website-only API surface minimal and read-only
+- Move tour/content data to persistent storage when needed
+- Add production deployment checks and monitoring baseline
