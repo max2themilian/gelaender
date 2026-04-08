@@ -1,1 +1,1 @@
-"""Payments route placeholder."""
+"""Payments route removed for website-only release."""

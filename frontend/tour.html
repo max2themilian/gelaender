@@ -4,22 +4,25 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="Gelaender dates and live shows." />
-    <title>Gelaender | Dates</title>
+    <title>Gelaender | Shows</title>
     <link rel="icon" href="assets/logo1.svg" type="image/svg+xml" />
     <link rel="stylesheet" href="css/variables.css" />
     <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="css/responsive.css" />
   </head>
-  <body>
+  <body data-page="dates">
     <header class="site-header">
       <a class="brand" href="index.html"
         ><img
-          src="assets/logo1.svg"
+          src="assets/logo1white.svg"
           alt="Gelaender logo"
           width="48"
           height="48"
         /><span>Gelaender</span></a
       >
+      <a class="header-wordmark" href="index.html" aria-label="Gelaender home">
+        <img src="assets/font1white.svg" alt="" width="320" height="34" />
+      </a>
       <button
         class="menu-toggle"
         type="button"
@@ -31,43 +34,131 @@
       </button>
       <nav id="primary-nav" class="site-nav" aria-label="Primary navigation">
         <a href="index.html">Home</a>
-        <a href="music.html">Musik</a>
-        <a href="tour.html" aria-current="page">Dates</a>
+        <a href="music.html">Music</a>
+        <a href="tour.html" aria-current="page">Shows</a>
         <a href="shop.html">Shop</a>
         <a href="contact.html">Contact</a>
       </nav>
     </header>
     <main>
-      <section class="hero reveal compact">
-        <h1>Dates</h1>
-        <p>Upcoming live shows and ticket links.</p>
-      </section>
-      <section class="panel reveal">
-        <ul id="dates-list" class="tour-list" aria-live="polite">
-          <li>
-            <span>2026-06-14 | Berlin | Das Lichtwerk</span>
-            <a
-              href="https://example.com/tickets"
-              target="_blank"
-              rel="noopener noreferrer"
-              >Tickets</a
-            >
-          </li>
-          <li>
-            <span>2026-07-02 | Leipzig | Stromhaus</span>
-            <a
-              href="https://example.com/tickets"
-              target="_blank"
-              rel="noopener noreferrer"
-              >Tickets</a
-            >
-          </li>
-        </ul>
+      <section class="hero-home reveal page-hero-content">
+        <div class="hero-stripe-content">
+          <p class="kicker">
+            Psychedelic Kraut Engineering from Leipzig since 2025
+          </p>
+        </div>
+        <div class="page-overlay-content">
+          <h1>Shows</h1>
+          <ul id="dates-list" class="dates-plain" aria-live="polite">
+            <li>
+              <span>
+                28.04. Leipzig Moritzbastei Kombynat Robotron + Special Guest:
+                Gelaender
+              </span>
+              <a
+                href="https://www.moritzbastei.de/event/konzert/2026-04-28/kombynat-robotron"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="date-ticket"
+                >Tickets</a
+              >
+            </li>
+            <li>
+              <span>02.05. Lauscha</span>
+              <a href="#" class="date-ticket is-disabled" aria-disabled="true"
+                >Tickets</a
+              >
+            </li>
+            <li>
+              <span>08.05. Leipzig Plague with Mauzz and Plumbers Smile</span>
+              <a href="#" class="date-ticket is-disabled" aria-disabled="true"
+                >Tickets</a
+              >
+            </li>
+            <li>
+              <span>16.05. Niederschelt</span>
+              <a href="#" class="date-ticket is-disabled" aria-disabled="true"
+                >Tickets</a
+              >
+            </li>
+          </ul>
+          <p class="plain-copy">More shows tba.</p>
+        </div>
       </section>
     </main>
-    <footer class="site-footer"><small>&copy; 2026 Gelaender</small></footer>
-    <script src="js/api.js" defer></script>
-    <script src="js/dates.js" defer></script>
+    <footer class="site-footer">
+      <div class="site-footer-inner">
+        <div class="site-footer-meta">
+          <small>&copy; 2026 Gelaender</small>
+          <nav class="legal-links" aria-label="Legal links">
+            <a href="impressum.html">Impressum</a>
+            <a href="datenschutz.html">Datenschutz</a>
+          </nav>
+        </div>
+        <nav class="social-icons" aria-label="Footer social links">
+          <a
+            href="https://www.instagram.com/gelaenderband/"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="hero-social-icon"
+            aria-label="Instagram"
+            ><svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.5"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+            >
+              <rect x="2" y="2" width="20" height="20" rx="5" />
+              <circle cx="12" cy="12" r="4.5" />
+              <circle
+                cx="17.5"
+                cy="6.5"
+                r="1"
+                fill="currentColor"
+                stroke="none"
+              /></svg
+          ></a>
+          <a
+            href="https://gelaender.bandcamp.com/track/autofahrn-demo"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="hero-social-icon"
+            aria-label="Bandcamp"
+            ><svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              fill="currentColor"
+              aria-hidden="true"
+            >
+              <path d="M0 18.75l7.437-13.5H24l-7.438 13.5z" /></svg
+          ></a>
+          <a
+            href="https://www.youtube.com/channel/UCO7sa2VG6yOzbPGzlruR59A"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="hero-social-icon"
+            aria-label="YouTube"
+            ><svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              fill="currentColor"
+              aria-hidden="true"
+            >
+              <path
+                d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.95C18.88 4 12 4 12 4s-6.88 0-8.59.47a2.78 2.78 0 0 0-1.95 1.95A29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58 2.78 2.78 0 0 0 1.95 1.95C5.12 20 12 20 12 20s6.88 0 8.59-.47a2.78 2.78 0 0 0 1.95-1.95A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"
+              />
+              <polygon
+                style="fill: #1f2328"
+                points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02"
+              /></svg
+          ></a>
+        </nav>
+      </div>
+    </footer>
     <script src="js/main.js" defer></script>
   </body>
 </html>

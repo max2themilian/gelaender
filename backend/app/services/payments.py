@@ -1,1 +1,1 @@
-"""Payments service placeholder."""
+"""Payments service removed for website-only release."""

@@ -14,16 +14,29 @@
     <header class="site-header">
       <a class="brand" href="index.html"
         ><img
-          src="assets/logo1.svg"
+          src="assets/logo1white.svg"
           alt="Gelaender logo"
           width="48"
           height="48"
         /><span>Gelaender</span></a
       >
-      <nav aria-label="Primary navigation">
+      <a class="header-wordmark" href="index.html" aria-label="Gelaender home">
+        <img src="assets/font1white.svg" alt="" width="320" height="34" />
+      </a>
+      <button
+        class="menu-toggle"
+        type="button"
+        aria-label="Toggle navigation menu"
+        aria-expanded="false"
+        aria-controls="primary-nav"
+      >
+        Menu
+      </button>
+      <nav id="primary-nav" class="site-nav" aria-label="Primary navigation">
         <a href="index.html">Home</a>
+        <a href="music.html">Music</a>
+        <a href="tour.html">Shows</a>
         <a href="shop.html">Shop</a>
-        <a href="tour.html">Tour</a>
         <a href="about.html" aria-current="page">About</a>
         <a href="contact.html">Contact</a>
       </nav>
@@ -37,7 +50,79 @@
         </p>
       </section>
     </main>
-    <footer class="site-footer"><small>&copy; 2026 Gelaender</small></footer>
+    <footer class="site-footer">
+      <div class="site-footer-inner">
+        <div class="site-footer-meta">
+          <small>&copy; 2026 Gelaender</small>
+          <nav class="legal-links" aria-label="Legal links">
+            <a href="impressum.html">Impressum</a>
+            <a href="datenschutz.html">Datenschutz</a>
+          </nav>
+        </div>
+        <nav class="social-icons" aria-label="Footer social links">
+          <a
+            href="https://www.instagram.com/gelaenderband/"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="hero-social-icon"
+            aria-label="Instagram"
+            ><svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.5"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+            >
+              <rect x="2" y="2" width="20" height="20" rx="5" />
+              <circle cx="12" cy="12" r="4.5" />
+              <circle
+                cx="17.5"
+                cy="6.5"
+                r="1"
+                fill="currentColor"
+                stroke="none"
+              /></svg
+          ></a>
+          <a
+            href="https://gelaender.bandcamp.com/track/autofahrn-demo"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="hero-social-icon"
+            aria-label="Bandcamp"
+            ><svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              fill="currentColor"
+              aria-hidden="true"
+            >
+              <path d="M0 18.75l7.437-13.5H24l-7.438 13.5z" /></svg
+          ></a>
+          <a
+            href="https://www.youtube.com/channel/UCO7sa2VG6yOzbPGzlruR59A"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="hero-social-icon"
+            aria-label="YouTube"
+            ><svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              fill="currentColor"
+              aria-hidden="true"
+            >
+              <path
+                d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.95C18.88 4 12 4 12 4s-6.88 0-8.59.47a2.78 2.78 0 0 0-1.95 1.95A29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58 2.78 2.78 0 0 0 1.95 1.95C5.12 20 12 20 12 20s6.88 0 8.59-.47a2.78 2.78 0 0 0 1.95-1.95A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"
+              />
+              <polygon
+                style="fill: #1f2328"
+                points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02"
+              /></svg
+          ></a>
+        </nav>
+      </div>
+    </footer>
     <script src="js/main.js" defer></script>
   </body>
 </html>

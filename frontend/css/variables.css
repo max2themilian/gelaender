@@ -9,8 +9,10 @@
   --color-border: #4a545e;
   --shadow-soft: 0 10px 30px rgba(0, 0, 0, 0.25);
 
-  --font-display: "Oswald", "Arial Narrow", sans-serif;
-  --font-body: "Source Sans 3", "Segoe UI", sans-serif;
+  --font-display: "Unica One", "Arial Narrow", sans-serif;
+  --font-body: "Spline Sans Mono", "Source Sans 3", "Segoe UI", sans-serif;
+  --font-mono: "Space Mono", "Courier New", monospace;
+  --font-typewriter: "Special Elite", "Courier New", monospace;
 
   --space-1: 0.25rem;
   --space-2: 0.5rem;
@@ -25,4 +27,5 @@
 
   --motion-fast: 160ms;
   --motion-med: 280ms;
+  --header-h: 4rem;
 }

@@ -1,2 +1,1 @@
-def test_placeholder_products() -> None:
-    assert True
+"""Product tests removed for website-only release."""

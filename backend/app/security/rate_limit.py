@@ -1,1 +1,1 @@
-"""Rate limit placeholder."""
+"""Rate limiting helper removed for website-only release."""

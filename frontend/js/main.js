@@ -55,8 +55,43 @@ function setupSmoothAnchors() {
   });
 }
 
+function setupScrollHeader() {
+  const header = document.querySelector(".site-header");
+  if (!header) return;
+  const onScroll = () => header.classList.toggle("scrolled", window.scrollY > 60);
+  window.addEventListener("scroll", onScroll, { passive: true });
+  onScroll();
+}
+
+function setupContactForm() {
+  const form = document.querySelector("[data-contact-form]");
+  if (!form) return;
+
+  form.addEventListener("submit", (event) => {
+    event.preventDefault();
+
+    const formData = new FormData(form);
+    const name = String(formData.get("name") || "").trim();
+    const email = String(formData.get("email") || "").trim();
+    const subject = String(formData.get("subject") || "").trim();
+    const message = String(formData.get("message") || "").trim();
+
+    const lines = [];
+    if (name) lines.push(`Name: ${name}`);
+    if (email) lines.push(`Email: ${email}`);
+    lines.push("");
+    lines.push(message);
+
+    const mailtoSubject = encodeURIComponent(subject || "Gelaender inquiry");
+    const mailtoBody = encodeURIComponent(lines.join("\n"));
+    window.location.href = `mailto:gelaender18065@gmail.com?subject=${mailtoSubject}&body=${mailtoBody}`;
+  });
+}
+
 document.addEventListener("DOMContentLoaded", () => {
   setupMobileMenu();
   setupRevealAnimations();
   setupSmoothAnchors();
+  setupScrollHeader();
+  setupContactForm();
 });

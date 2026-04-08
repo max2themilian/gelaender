@@ -1,2 +1,1 @@
-def test_placeholder_payments() -> None:
-    assert True
+"""Payment tests removed for website-only release."""

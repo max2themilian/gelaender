@@ -1,1 +1,1 @@
-"""Admin route placeholder."""
+"""Admin route removed for website-only release."""

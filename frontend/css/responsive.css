@@ -1,8 +1,18 @@
-@media (max-width: 720px) {
+@media (max-width: 915px) {
   .site-header {
-    position: sticky;
     padding: var(--space-3) var(--space-4);
     flex-wrap: wrap;
+    align-items: flex-start;
+  }
+
+  .header-wordmark {
+    left: 50%;
+    top: 1.2rem;
+    transform: translateX(-50%);
+  }
+
+  .header-wordmark img {
+    width: min(30vw, 9rem);
   }
 
   .menu-toggle {
@@ -21,34 +31,61 @@
 
   .site-nav.is-open {
     display: flex;
+    background: rgba(18, 21, 25, 0.62);
+    padding: var(--space-3) var(--space-4);
+    margin: 0 calc(-1 * var(--space-4));
   }
 
   .site-nav a {
     padding: var(--space-2) 0;
   }
 
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+
   .hero {
     padding: var(--space-5);
   }
 
-  .hero-home {
-    min-height: 25rem;
+  .hero-stripe-content {
+    padding-top: calc(var(--header-h) + 0.35rem);
   }
 
-  .hero-home::after {
-    background-size: min(90vw, 52rem) auto;
+  .page-hero-content {
+    min-height: 100vh;
+    min-height: 100dvh;
   }
 
-  .cta-row {
+  .page-overlay-content {
+    width: min(92vw, 40rem);
+    margin-top: clamp(12vh, 17vh, 20vh);
+  }
+
+  .music-page .page-overlay-content {
+    margin-top: clamp(9vh, 12vh, 15vh);
+  }
+
+  .home-strip {
     flex-direction: column;
     align-items: flex-start;
+    gap: var(--space-3);
   }
 
   .social-inline {
     gap: var(--space-2);
   }
 
-  main {
-    width: min(1100px, 94vw);
+  .hero-socials {
+    gap: var(--space-4);
+  }
+
+  .site-footer-inner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .legal-links {
+    gap: 0.3rem 0.7rem;
   }
 }
