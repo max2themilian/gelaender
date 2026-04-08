@@ -1,0 +1,2 @@
+-- Gelaender schema placeholder for Day 1.
+-- Day 3 will add full normalized schema and indexes.

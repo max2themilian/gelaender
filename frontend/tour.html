@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Gelaender dates and live shows." />
+    <title>Gelaender | Dates</title>
+    <link rel="icon" href="assets/logo1.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="css/variables.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/responsive.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="index.html"
+        ><img
+          src="assets/logo1.svg"
+          alt="Gelaender logo"
+          width="48"
+          height="48"
+        /><span>Gelaender</span></a
+      >
+      <button
+        class="menu-toggle"
+        type="button"
+        aria-label="Toggle navigation menu"
+        aria-expanded="false"
+        aria-controls="primary-nav"
+      >
+        Menu
+      </button>
+      <nav id="primary-nav" class="site-nav" aria-label="Primary navigation">
+        <a href="index.html">Home</a>
+        <a href="music.html">Musik</a>
+        <a href="tour.html" aria-current="page">Dates</a>
+        <a href="shop.html">Shop</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </header>
+    <main>
+      <section class="hero reveal compact">
+        <h1>Dates</h1>
+        <p>Upcoming live shows and ticket links.</p>
+      </section>
+      <section class="panel reveal">
+        <ul id="dates-list" class="tour-list" aria-live="polite">
+          <li>
+            <span>2026-06-14 | Berlin | Das Lichtwerk</span>
+            <a
+              href="https://example.com/tickets"
+              target="_blank"
+              rel="noopener noreferrer"
+              >Tickets</a
+            >
+          </li>
+          <li>
+            <span>2026-07-02 | Leipzig | Stromhaus</span>
+            <a
+              href="https://example.com/tickets"
+              target="_blank"
+              rel="noopener noreferrer"
+              >Tickets</a
+            >
+          </li>
+        </ul>
+      </section>
+    </main>
+    <footer class="site-footer"><small>&copy; 2026 Gelaender</small></footer>
+    <script src="js/api.js" defer></script>
+    <script src="js/dates.js" defer></script>
+    <script src="js/main.js" defer></script>
+  </body>
+</html>

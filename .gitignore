@@ -1,0 +1,29 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.venv/
+venv/
+
+# Environment
+.env
+.env.*
+!.env.example
+
+# Tooling
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# OS/editor
+.DS_Store
+Thumbs.db
+.vscode/*
+!.vscode/extensions.json
+
+# Build/cache
+dist/
+build/
+.coverage
+htmlcov/

@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Gelaender music releases and videos." />
+    <title>Gelaender | Musik</title>
+    <link rel="icon" href="assets/logo1.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="css/variables.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/responsive.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="index.html"
+        ><img
+          src="assets/logo1.svg"
+          alt="Gelaender logo"
+          width="48"
+          height="48"
+        /><span>Gelaender</span></a
+      >
+      <button
+        class="menu-toggle"
+        type="button"
+        aria-label="Toggle navigation menu"
+        aria-expanded="false"
+        aria-controls="primary-nav"
+      >
+        Menu
+      </button>
+      <nav id="primary-nav" class="site-nav" aria-label="Primary navigation">
+        <a href="index.html">Home</a>
+        <a href="music.html" aria-current="page">Musik</a>
+        <a href="tour.html">Dates</a>
+        <a href="shop.html">Shop</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero reveal compact">
+        <h1>Musik</h1>
+        <p>Current release feed with up to two featured videos.</p>
+      </section>
+
+      <section class="panel reveal">
+        <h2>Featured Videos</h2>
+        <div class="video-grid">
+          <article class="video-card">
+            <h3>Current Video 01</h3>
+            <div class="video-frame">
+              <iframe
+                src="https://www.youtube-nocookie.com/embed/M7lc1UVf-VE"
+                title="Gelaender video 01"
+                loading="lazy"
+                allow="
+                  accelerometer;
+                  autoplay;
+                  clipboard-write;
+                  encrypted-media;
+                  gyroscope;
+                  picture-in-picture;
+                  web-share;
+                "
+                referrerpolicy="strict-origin-when-cross-origin"
+                allowfullscreen
+              ></iframe>
+            </div>
+          </article>
+          <article class="video-card">
+            <h3>Current Video 02</h3>
+            <div class="video-frame">
+              <iframe
+                src="https://www.youtube-nocookie.com/embed/ysz5S6PUM-U"
+                title="Gelaender video 02"
+                loading="lazy"
+                allow="
+                  accelerometer;
+                  autoplay;
+                  clipboard-write;
+                  encrypted-media;
+                  gyroscope;
+                  picture-in-picture;
+                  web-share;
+                "
+                referrerpolicy="strict-origin-when-cross-origin"
+                allowfullscreen
+              ></iframe>
+            </div>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer"><small>&copy; 2026 Gelaender</small></footer>
+    <script src="js/main.js" defer></script>
+  </body>
+</html>
