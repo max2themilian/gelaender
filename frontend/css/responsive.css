@@ -120,6 +120,15 @@
     gap: 0.35rem;
   }
 
+  .calendar-embed-wrap,
+  .calendar-embed {
+    min-height: 62vh;
+  }
+
+  .calendar-links {
+    justify-content: flex-start;
+  }
+
   .contact-page .hero.compact {
     max-width: 100%;
     padding: var(--space-5);

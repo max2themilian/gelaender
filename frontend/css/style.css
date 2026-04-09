@@ -565,6 +565,25 @@ h2 {
   cursor: default;
 }
 
+.calendar-embed-wrap {
+  margin-top: var(--space-4);
+  border: 1px solid rgba(142, 155, 167, 0.35);
+  background: rgba(24, 28, 32, 0.72);
+  min-height: 480px;
+}
+
+.calendar-embed {
+  display: block;
+  width: 100%;
+  min-height: 480px;
+  border: 0;
+}
+
+.calendar-links {
+  display: flex;
+  justify-content: flex-end;
+}
+
 .music-page .video-grid {
   grid-template-columns: 1fr;
   gap: var(--space-5);

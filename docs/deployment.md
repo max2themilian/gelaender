@@ -1,56 +1,76 @@
 # Deployment
 
-## Website-Only Release Checklist
+## Recommended Now: Static-Only on Cloudflare (No Backend)
 
-1. DNS and edge
-   - Point domain to Cloudflare nameservers.
-   - Proxy public records through Cloudflare.
-   - Enable "Always Use HTTPS" and SSL/TLS mode "Full (strict)".
+This is the best launch path for the current project goals:
 
-2. Origin hardening
-   - Expose only required backend endpoints.
-   - Restrict origin firewall access to Cloudflare egress ranges where possible.
-   - Keep environment secrets in server-side environment variables only.
+- No extra hosting cost for API/runtime.
+- Smaller attack surface and lower maintenance overhead.
+- Fast global delivery through Cloudflare.
+- Shows can still auto-update via embedded public Google Calendar.
 
-3. API safeguards
-   - Run production mode with OpenAPI/docs disabled.
-   - Keep CORS restricted to approved frontend origins.
-   - Serve security headers (CSP, X-Frame-Options, Referrer-Policy, nosniff).
+## Hosting Choice
 
-4. Validation before go-live
-   - Verify `/health` returns 200.
-   - Verify `/api/tour-dates` and `/api/social-links` return expected JSON.
-   - Verify frontend pages render and mailto contact flow works.
+Use Cloudflare Pages on the free plan and deploy the `frontend/` folder as a static site.
 
-5. Post-release monitoring
-   - Watch Cloudflare security events and 4xx/5xx trends.
-   - Add rate limits for `/api/*` if traffic spikes.
+Recommended setup:
 
-## Google Calendar Shows Sync
+1. Cloudflare Dashboard
+2. `Workers & Pages`
+3. `Create application`
+4. `Pages`
+5. Connect GitHub repo or use direct upload
+6. Project root / output: `frontend`
+7. No build command required for the current site
 
-1. Create one dedicated Google Calendar for live dates.
-2. Add and maintain shows only in this calendar.
-3. Set calendar visibility to public.
-4. Copy the public ICS link from Google Calendar settings.
-5. Add backend environment variable:
-   - `GOOGLE_CALENDAR_ICS_URL=<public_ics_url>`
-6. Restart backend. `/api/tour-dates` will use Google events automatically.
-7. Optional fallback method: `GOOGLE_CALENDAR_ID` + `GOOGLE_API_KEY`.
-8. If all Google settings are missing or unavailable, backend falls back to local sample dates.
+## Cloudflare Go-Live Checklist
 
-## Pre-Nameserver Launch Prep
+1. Domain and DNS
+   - Nameservers already point to Cloudflare.
+   - Ensure `www` and root domain resolve to your static site origin.
+   - Keep mail records (`MX`, SPF/TXT) as DNS-only.
 
-Set these values on the production backend now (before DNS cutover):
+2. SSL/TLS and transport
+   - Enable "Always Use HTTPS".
+   - Enable "Automatic HTTPS Rewrites".
+   - Enable HSTS after verifying everything works over HTTPS.
 
-1. `APP_ENV=production`
-2. `ALLOWED_ORIGINS=["https://gelaender.net","https://www.gelaender.net"]`
-3. `GOOGLE_CALENDAR_ICS_URL=https://calendar.google.com/calendar/ical/gelaender18065%40gmail.com/public/basic.ics`
+3. Baseline edge security
+   - Enable WAF managed rules.
+   - Enable Bot Fight Mode.
+   - Keep Development Mode disabled in normal operation.
+   - Keep the `frontend/_headers` file in the deploy so Pages serves security headers.
 
-After nameservers are active, run smoke checks:
+4. Static site checks
+   - `https://gelaender.net` loads.
+   - `https://www.gelaender.net` loads.
+   - Navigation works across all pages.
+   - Contact form triggers mail client correctly.
 
-1. `https://www.gelaender.net` loads over HTTPS.
-2. `https://www.gelaender.net` shows the current tour dates.
-3. Backend health endpoint returns 200.
-4. Backend `/api/tour-dates` returns non-empty JSON and ticket links.
+5. Shows page checks
+   - `tour.html` displays the embedded Google Calendar.
+   - "Open full calendar" opens the public calendar in a new tab.
+   - New Google Calendar events appear on site after Google refresh.
 
-If tour dates fail, verify calendar is still public and the ICS URL is unchanged.
+## Custom Domain Setup in Pages
+
+1. Add `gelaender.net` as a custom domain.
+2. Add `www.gelaender.net` as a custom domain.
+3. Set one hostname as canonical.
+4. Redirect the secondary hostname to the canonical hostname.
+
+If you want the public-facing domain to be `www.gelaender.net`, make `www` canonical and redirect root to `www`.
+
+## Google Calendar Without Backend
+
+Use a public calendar and embed it directly in the shows page.
+
+1. Keep calendar visibility set to public.
+2. Add or edit shows in Google Calendar.
+3. Site updates automatically through the embedded agenda view.
+
+No Google Cloud billing, no API key, and no backend runtime required.
+
+## Optional Phase 2 (Later)
+
+If you later need custom event cards, ticket-link parsing, or stricter control over output format, re-enable the FastAPI backend and use the ICS ingestion route.
