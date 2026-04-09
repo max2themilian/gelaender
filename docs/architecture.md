@@ -3,25 +3,20 @@
 ## Current State
 
 - Frontend: multi-page vanilla HTML/CSS/JS in `frontend/`
-- Backend: FastAPI app in `backend/app/`
-- Database: PostgreSQL target with Alembic migration scaffold initialized
+- Hosting: Cloudflare Pages
+- Security headers: `frontend/_headers`
+- External embeds: public Google Calendar and YouTube no-cookie
 
-## Backend API Layout
+## Site Structure
 
-- App entry: `backend/app/main.py`
-- Health endpoint: `/health`
-- Tour endpoint: `/api/tour-dates`
-- Social links endpoint: `/api/social-links`
+- `index.html` for landing page and release callout
+- `music.html` for embedded videos
+- `tour.html` for public Google Calendar agenda view
+- `contact.html` for mailto contact flow
+- legal pages for imprint and privacy content
 
-## Backend Layering
+## Operating Model
 
-- `routes/` for HTTP routers and endpoint registration
-- `schemas/` for Pydantic response and request contracts
-- `models/` for SQLAlchemy ORM entities
-- `services/` reserved for business logic (next steps)
-
-## Next Targets
-
-- Keep website-only API surface minimal and read-only
-- Move tour/content data to persistent storage when needed
-- Add production deployment checks and monitoring baseline
+- No backend runtime
+- No database
+- No server-side secrets required for deployment

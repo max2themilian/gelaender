@@ -1,6 +1,8 @@
 # Security
 
-- Website-only release: no payment processing in scope
-- Minimal public API surface: `/health`, `/api/tour-dates`, `/api/social-links`
-- Environment variable secrets only
-- Restrictive CORS and security response headers enabled
+- Static-only release on Cloudflare Pages
+- No payment processing in scope
+- No backend or database exposed publicly
+- Security headers are served from `frontend/_headers`
+- YouTube uses `youtube-nocookie.com`
+- Shows use a public Google Calendar embed

@@ -1,30 +1,26 @@
 # Setup
 
-## Local backend
-
-1. Create and activate a Python virtual environment.
-2. Install dependencies from backend/requirements.txt.
-3. Run backend: python -m uvicorn run:app --reload --app-dir backend --host 127.0.0.1 --port 8000
-
 ## Local frontend
 
-1. In a second terminal: Set-Location frontend
-2. Run: python -m http.server 5500
+1. Open a terminal in the repository root.
+2. Run:
 
-## Day 2 migration bootstrap
+```powershell
+Set-Location frontend
+python -m http.server 5500
+```
 
-1. Initialize Alembic once: python -m alembic init backend/alembic
+3. Open `http://127.0.0.1:5500` in the browser.
 
 ## Google Calendar for Shows
 
 1. Create a dedicated Google Calendar for shows.
 2. Set calendar visibility to public.
-3. In Google Calendar settings, copy the public ICS URL.
-4. Put this value into .env:
-   - GOOGLE_CALENDAR_ICS_URL
-5. Restart backend and verify:
-   - GET /api/tour-dates returns upcoming events from Google Calendar.
+3. Add and maintain shows in that calendar.
+4. Verify the embed on `tour.html` shows the current dates.
 
-Optional (if you later have Google Cloud access):
+## Cloudflare Pages
 
-- GOOGLE_CALENDAR_ID and GOOGLE_API_KEY can also be used.
+1. Deploy the `frontend/` folder with Cloudflare Pages.
+2. Keep `frontend/_headers` in the published output.
+3. Use custom domains for `gelaender.net` and `www.gelaender.net`.

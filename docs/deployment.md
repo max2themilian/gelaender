@@ -36,7 +36,7 @@ Recommended setup:
    - Enable HSTS after verifying everything works over HTTPS.
 
 3. Baseline edge security
-   - Enable WAF managed rules.
+   - On the free plan, rely on Bot Fight Mode, HTTPS enforcement, and response headers.
    - Enable Bot Fight Mode.
    - Keep Development Mode disabled in normal operation.
    - Keep the `frontend/_headers` file in the deploy so Pages serves security headers.
@@ -73,4 +73,4 @@ No Google Cloud billing, no API key, and no backend runtime required.
 
 ## Optional Phase 2 (Later)
 
-If you later need custom event cards, ticket-link parsing, or stricter control over output format, re-enable the FastAPI backend and use the ICS ingestion route.
+If you later need custom event cards, ticket-link parsing, or stricter control over output format, build a separate backend project instead of reintroducing server code into this static deployment.
