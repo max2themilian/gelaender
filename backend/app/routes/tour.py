@@ -4,7 +4,7 @@ import json
 import re
 from datetime import UTC, datetime
 from typing import Any
-from urllib.parse import quote, unquote
+from urllib.parse import quote, unquote, urlparse
 from urllib.request import Request, urlopen
 
 from fastapi import APIRouter
@@ -45,11 +45,20 @@ def _parse_ics_start_to_iso_date(value: str) -> str | None:
 	return None
 
 
+def _validate_google_calendar_url(url: str) -> None:
+	parsed = urlparse(url)
+	if parsed.scheme != "https":
+		raise ValueError("Calendar URL must use HTTPS")
+	if not parsed.hostname or not parsed.hostname.endswith(".google.com"):
+		raise ValueError("Calendar URL must be a Google domain")
+
+
 def _load_google_ics_tour_dates() -> list[TourDateOut]:
 	ics_url = settings.google_calendar_ics_url
 	if not ics_url:
 		return []
 
+	_validate_google_calendar_url(ics_url)
 	request = Request(ics_url, headers={"Accept": "text/calendar"})
 	with urlopen(request, timeout=8) as response:
 		ics_text = response.read().decode("utf-8", errors="replace")

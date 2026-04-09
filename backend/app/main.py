@@ -19,7 +19,7 @@ app.add_middleware(
     allow_origins=settings.allowed_origins,
     allow_credentials=False,
     allow_methods=["GET", "OPTIONS"],
-    allow_headers=["*"],
+    allow_headers=["Accept", "Accept-Language", "Content-Type"],
 )
 
 
